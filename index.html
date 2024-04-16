@@ -3,34 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embed PDF with PDFObject and PDF.js</title>
+    <title>Display PDF</title>
     <style>
-        .pdfobject-container {
-            height: 500px; /* Set height of container */
-            border: 1px solid #ccc; /* Add border for visual clarity */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
     </style>
 </head>
 <body>
 
-<!-- Container to hold the embedded PDF -->
-<div id="my-pdf" class="pdfobject-container"></div>
-
-<!-- Include PDFObject library -->
-<script src="https://unpkg.com/pdfobject"></script>
-
-<!-- Script to embed the PDF using PDF.js -->
-<script>
-    // Specify options for displaying the PDF with PDF.js
-    let options = {
-        page: 1, // Navigate to page 1 when the PDF is opened
-        forcePDFJS: true, // Force the browser to use PDF.js
-        PDFJS_URL: "https://mozilla.github.io/pdf.js/web/viewer.html" // URL to PDF.js viewer
-    };
-
-    // Embed the PDF into the container
-    PDFObject.embed("/CVPDF/Austin Wong__RESUME_2024_04-15 v.2.1.pdf", "#my-pdf", options);
-</script>
+<iframe src="/CVPDF/Austin Wong__RESUME_2024_04-15 v.2.1.pdf" title="PDF Viewer" frameborder="0"></iframe>
 
 </body>
 </html>
